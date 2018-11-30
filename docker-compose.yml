@@ -1,0 +1,26 @@
+version: "3.2"
+services:
+    mysql:
+      image: mysql:5.7
+      container_name: test-task-mysql
+      working_dir: /application
+      volumes:
+        - .:/application
+      environment:
+        - MYSQL_ROOT_PASSWORD=tidio
+        - MYSQL_DATABASE=tidio
+        - MYSQL_USER=tidio
+        - MYSQL_PASSWORD=tidio
+      ports:
+        - "8082:3306"
+
+    php:
+      build: containers/php
+      container_name: test-task-php
+      working_dir: /application
+      volumes:
+        - type: bind
+          source: .
+          target: /application
+      ports:
+        - "8000:8000"
