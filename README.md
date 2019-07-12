@@ -4,7 +4,7 @@ docker-compose build
 To start mysql:
 docker-compose up
 
-To execute composer install
+To execute compose install
 docker-compose run php php /bin/composer.phar install -d tidio-test-task
 
 To start symfony dev server:
