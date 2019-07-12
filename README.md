@@ -2,7 +2,7 @@ To build containers run:
 docker-compose build
 
 To start mysql:
-docker-composer up
+docker-compose up
 
 To execute composer install
 docker-compose run php php /bin/composer.phar install -d tidio-test-task
